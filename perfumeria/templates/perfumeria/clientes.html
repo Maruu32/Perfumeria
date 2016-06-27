@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<head>
 	<meta charset="utf-8">
@@ -10,6 +12,16 @@
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
 	<meta name="author" content="FREEHTML5.CO" />
 
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
 
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="favicon.ico">
@@ -22,9 +34,6 @@
 	<link rel="stylesheet" href="static/neos/css/icomoon.css">
 	<!-- Bootstrap  -->
 	<link rel="stylesheet" href="static/neos/css/bootstrap.css">
-	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="static/neos/css/owl.carousel.min.css">
-	<link rel="stylesheet" href="static/neos/css/owl.theme.default.min.css">
 
 	<link rel="stylesheet" href="static/neos/css/style.css">
 
@@ -41,43 +50,38 @@
 	<header>
 		<div class="container text-center">
 			<div class="fh5co-navbar-brand">
-				<a class="fh5co-logo" href="index.html">Perfumeria</a>
+				<a class="fh5co-logo" href="home.html">Perfumeria</a>
 			</div>
 			<nav id="fh5co-main-nav" role="navigation">
 				<ul>
-					<li><a href="/" class="active">Home</a></li>
+					<li><a href="/"">Home</a></li>
 					<li><a href="productos.html">Productos</a></li>
-					<li><a href="clientes.html">Clientes</a></li>
-					<li><a href="add_cliente.html">Agregar Cliente</a></li>
+					<li><a href="clientes.html"class="active" >Clientes</a></li>
+					<li><a href="add_cliente.html" >Agregar Cliente</a></li>
 					<li><a href="facturacion.html">Facturacion</a></li>
 				</ul>
 			</nav>
 		</div>
 	</header>
-	
-	<div class="owl-carousel owl-carousel1 owl-carousel-fullwidth fh5co-light-arrow animate-box" data-animate-effect="fadeIn">
-		<div class="item"><a href="images/featured-1.jpg" class="image-popup"><img src="images/featured-1.jpg" alt="image"></a></div>
-		<div class="item"><a href="images/featured-2.jpg" class="image-popup"><img src="images/featured-2.jpg" alt="image"></a></div>
-	</div>
-
-
-	<footer>
-		<div id="footer" class="fh5co-border-line">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center">
-						<p>Copyright 2016 Free Html5 <a href="#">Neos</a>. All Rights Reserved. <br>Made with <i class="icon-heart3 love"></i> by <a href="http://freehtml5.co/" target="_blank">Freehtml5.co</a> / Demo Images: <a href="https://www.pexels.com/" target="_blank">Pexels</a> &amp; <a href="http://plmd.me/" target="_blank">PLMD</a> </p>
-						<p class="fh5co-social-icons">
-							<a href="#"><i class="icon-twitter-with-circle"></i></a>
-							<a href="#"><i class="icon-facebook-with-circle"></i></a>
-							<a href="#"><i class="icon-instagram-with-circle"></i></a>
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-
+<table class="table table-hover">
+    <p>Clientes</p>
+        <tr>
+            <td class="warning">Nombre</td>
+            <td class="warning">ID</td>
+            <td class="warning">Apellido</td>
+            <td class="warning">DNI</td>
+            <td class="warning">Mail</td>
+        </tr>
+    {% for pr in clientes %}
+            <tr>
+                <td class="danger">{{pr.nombre_cliente}}</td>
+                <td class="success">{{pr.id}}</td>
+                <td class="success">{{pr.apellido}}</td>
+                <td class="success">{{pr.dni}}</td>
+                <td class="success">{{pr.mail}}</td>
+            </tr>
+    {% endfor %}
+</table>
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->

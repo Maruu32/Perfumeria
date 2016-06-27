@@ -29,7 +29,6 @@ class Productos (models.Model):
 
 class Cliente (models.Model):
 
-    id_cliente = models.IntegerField()
     nombre_cliente = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
     dni = models.CharField(max_length=11)
