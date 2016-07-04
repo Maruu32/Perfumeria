@@ -15,7 +15,6 @@ class Empleados (models.Model):
 
 class Productos (models.Model):
 
-    id_producto = models.IntegerField()
     nombre = models.CharField(max_length=100)
     precio = models.CharField(max_length=10)
     tipo = models.CharField(max_length=200)
@@ -57,11 +56,11 @@ class Forma_de_pago (models.Model):
         return self.tipo
 
 class Facturacion(models.Model):
+
     fecha = models.DateField(auto_now=True, auto_now_add=False)
-    id_facturacion = models.IntegerField(null=True)
-    id_empleado = models.ForeignKey("Empleados")
-    id_cliente = models.ForeignKey("Cliente")
-    id_producto = models.ForeignKey("Productos")
+    empleado = models.ForeignKey("Empleados")
+    cliente = models.ForeignKey("Cliente")
+    producto = models.ForeignKey("Productos")
     cantidad_productos = models.IntegerField()
     forma_de_pago = models.ForeignKey("Forma_de_pago")
     precio_total = models.IntegerField()
@@ -69,19 +68,11 @@ class Facturacion(models.Model):
     def __str__(self):
         return self.id_facturacion
 
-class Reclamos_al_proveedor(models.Model):
-    id_empleado = models.ForeignKey("Empleados")
-    id_reclamo = models.IntegerField()
-    descripcion = models.CharField(max_length=500)
-
-    def __str__(self):
-        return self.id_reclamo
-
-class Reclamos_a_perfumeria(models.Model):
-    id_cliente = models.ForeignKey("Cliente")
-    id_empleado = models.ForeignKey("Empleados")
-    id_reclamo = models.IntegerField()
-    id_producto = models.ForeignKey("Productos")
+class Reclamos(models.Model):
+    cliente = models.ForeignKey("Cliente")
+    empleado = models.ForeignKey("Empleados")
+    reclamo = models.IntegerField()
+    producto = models.ForeignKey("Productos")
     descripcion = models.CharField(max_length=500)
 
     def __str__(self):

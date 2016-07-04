@@ -12,6 +12,7 @@
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
 	<meta name="author" content="FREEHTML5.CO" />
 
+
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="favicon.ico">
 
@@ -43,37 +44,33 @@
 			</div>
 			<nav id="fh5co-main-nav" role="navigation">
 				<ul>
-					<li><a href="/">Home</a></li>
-					<li><a href="productos.html" class="active">Productos</a></li>
+					<li><a href="/"">Home</a></li>
+					<li><a href="productos.html">Productos</a></li>
 					<li><a href="clientes.html">Clientes</a></li>
-					<li><a href="add_cliente.html">Agregar Cliente</a></li>
+					<li><a href="add_cliente.html" >Agregar Cliente</a></li>
 					<li><a href="facturacion.html">Facturacion</a></li>
 					<li><a href="reclamos.html">Hacer reclamo</a></li>
-					<li><a href="reclamos_lista.html">Reclamos</a></li>
+					<li><a href="reclamos_lista.html" class="active">Reclamos</a></li>
 				</ul>
 			</nav>
 		</div>
 	</header>
 <table class="table table-hover">
-    <p>Productos</p>
+    <p>Reclamos</p>
         <tr>
-            <td class="warning">Nombre</td>
-            <td class="warning">Codigo</td>
-            <td class="warning">Precio</td>
-            <td class="warning">Tipo</td>
-            <td class="warning">Marca</td>
-            <td class="warning">Fragancia</td>
-            <td class="warning">Cantidad en Stock</td>
+            <td class="warning">Cliente</td>
+            <td class="warning">Empleado</td>
+            <td class="warning">Numero de Reclamo</td>
+            <td class="warning">Producto/td>
+            <td class="warning">Descripcion</td>
         </tr>
-    {% for pr in productos %}
+    {% for pr in reclamoslista %}
             <tr>
-                <td class="danger">{{pr.nombre}}</td>
-                <td class="success">{{pr.id_producto}}</td>
-                <td class="success">{{pr.precio}}</td>
-                <td class="success">{{pr.tipo}}</td>
-                <td class="success">{{pr.marca}}</td>
-                <td class="success">{{pr.fragancia}}</td>
-                <td class="success">{{pr.cantidad_en_stock}}</td>
+                <td class="danger">{{pr.cliente}}</td>
+                <td class="success">{{pr.empleado}}</td>
+                <td class="success">{{pr.reclamo}}</td>
+                <td class="success">{{pr.producto}}</td>
+                <td class="success">{{pr.descripcion}}</td>
             </tr>
     {% endfor %}
 </table>
